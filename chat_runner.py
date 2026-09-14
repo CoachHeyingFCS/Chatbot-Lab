@@ -13,10 +13,11 @@ userInput = input("What would you like to say to SpongeBob?\n Type exit to leave
 
 while userInput != "exit":
     prompt = [{"role": "system", "content":SYSTEM_PROMPT}, {"role": "user", "content": userInput}]
-    result = model.create_chat_completion(prompt, max_tokens=256, temperature = 0.8)
+    result = model.create_chat_completion(prompt, max_tokens=256, temperature = 2)
 
    # print(result)
     response = result["choices"][0]["message"]["content"]
     print(response)
-    userInput = input("You can type exit to leave\n")
+    userInput = input("You can type exit to leave\n\n")
+    print()
 print("Good-bye! Thanks for chatting with me!")
